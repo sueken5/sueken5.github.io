@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>すえけんくんのブログ</title>
-    <link>https://sueken5.github.io/</link>
+    <link>https://sueken5.dev/</link>
     <description>Recent content on すえけんくんのブログ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 04 Oct 2020 15:35:35 +0900</lastBuildDate><atom:link href="https://sueken5.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Oct 2020 15:35:35 +0900</lastBuildDate><atom:link href="https://sueken5.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>https://sueken5.github.io/about/</link>
+      <link>https://sueken5.dev/about/</link>
       <pubDate>Sun, 04 Oct 2020 15:36:27 +0900</pubDate>
       
-      <guid>https://sueken5.github.io/about/</guid>
+      <guid>https://sueken5.dev/about/</guid>
       <description>すえけんくんです。</description>
     </item>
     
     <item>
       <title>Hello World</title>
-      <link>https://sueken5.github.io/posts/hello-world/</link>
+      <link>https://sueken5.dev/posts/hello-world/</link>
       <pubDate>Sun, 04 Oct 2020 15:35:35 +0900</pubDate>
       
-      <guid>https://sueken5.github.io/posts/hello-world/</guid>
+      <guid>https://sueken5.dev/posts/hello-world/</guid>
       <description>ブログ作ったぞい</description>
     </item>
     

@@ -4,6 +4,8 @@ title = "すえけんくんのブログ"
 theme = "tale"
 publishDir = "docs"
 
+googleAnalytics = "UA-156069793-2"
+
 [menu]
 [[menu.main]]
 identifier = "about"

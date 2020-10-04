@@ -34,7 +34,7 @@
     <!-- Open Graph Protocol http://ogp.me/ -->
     <meta property="og:locale" content="ja">
     <meta property="og:title" content="{{- if .IsHome }}{{ .Site.Title }}{{- else }}{{ .Title }} &middot; {{ .Site.Title }}{{- end }}">
-<!--    <meta property="og:image" content="{{ if .Params.image }}{{.Site.BaseURL}}/images/{{.Params.image}}{{ else }}{{.Site.BaseURL}}/images/site-logo.png{{ end }}">-->
+    <meta property="og:image" content="{{ if .Params.image }}{{.Site.BaseURL}}/images/{{.Params.image}}{{ else }}{{.Site.BaseURL}}/images/apple-touch-icon.png{{ end }}">
     <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.SiteDescription }}{{ end }}">
     <meta property="og:site_name" content="{{ .Site.Title }}">
 </head>

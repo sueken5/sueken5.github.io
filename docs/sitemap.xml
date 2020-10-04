@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://sueken5.dev/posts/cat/</loc>
+    <lastmod>2020-10-04T17:13:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sueken5.dev/posts/</loc>
+    <lastmod>2020-10-04T17:13:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sueken5.dev/</loc>
+    <lastmod>2020-10-04T17:13:55+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://sueken5.dev/about/</loc>
     <lastmod>2020-10-04T15:36:27+09:00</lastmod>
   </url>
@@ -18,17 +33,7 @@
   </url>
   
   <url>
-    <loc>https://sueken5.dev/posts/</loc>
-    <lastmod>2020-10-04T15:35:35+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://sueken5.dev/tags/</loc>
-    <lastmod>2020-10-04T15:35:35+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sueken5.dev/</loc>
     <lastmod>2020-10-04T15:35:35+09:00</lastmod>
   </url>
   

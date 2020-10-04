@@ -1,0 +1,19 @@
+baseURL = "https://sueken5-dev.github.io/"
+languageCode = "ja"
+title = "すえけんくんのブログ"
+theme = "tale"
+publishDir = "docs"
+
+[menu]
+[[menu.main]]
+identifier = "about"
+name = "About"
+title = "About"
+url = "/about/"
+weight = 0
+[[menu.main]]
+identifier = "posts"
+name = "Posts"
+title = "Posts"
+url = "/posts/"
+weight = 0

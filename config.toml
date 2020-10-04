@@ -1,4 +1,4 @@
-baseURL = "https://sueken5-dev.github.io/"
+baseURL = "https://sueken5.github.io/"
 languageCode = "ja"
 title = "すえけんくんのブログ"
 theme = "tale"

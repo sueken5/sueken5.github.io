@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://sueken5.dev/posts/cat/</loc>
-    <lastmod>2020-10-04T17:13:55+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://sueken5.dev/posts/</loc>
-    <lastmod>2020-10-04T17:13:55+09:00</lastmod>
+    <lastmod>2020-10-04T20:54:17+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://sueken5.dev/</loc>
+    <lastmod>2020-10-04T20:54:17+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sueken5.dev/posts/local-gcs-emulation/</loc>
+    <lastmod>2020-10-04T20:54:17+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sueken5.dev/posts/cat/</loc>
     <lastmod>2020-10-04T17:13:55+09:00</lastmod>
   </url>
   

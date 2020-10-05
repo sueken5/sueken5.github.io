@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>tig/ghを使って効率的にPullRequestを送ろう &middot; すえけんくんのブログ</title>
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="すえけんくんのブログ" />
+
+    
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156069793-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-156069793-2');
+</script>
+
+
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="tig/ghを使って効率的にPullRequestを送ろう &middot; すえけんくんのブログ">
+    <meta property="og:url" content="https://sueken5.dev/posts/local-git-dev-env/" />
+    <meta property="og:image" content="https://sueken5.dev/posts/local-git-dev-env/images/thumbnail.png">
+    <meta property="og:description" content="">
+    <meta property="og:site_name" content="すえけんくんのブログ">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Sueken51" />
+
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+</head>
+
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">すえけんくんのブログ</h2>
+				</a>
+				<ul>
+    
+    
+        <li>
+            <a href="/about/">
+                
+                <span>About</span>
+                
+            </a>
+        </li>
+    
+        <li>
+            <a href="/posts/">
+                
+                <span>Posts</span>
+                
+            </a>
+        </li>
+    
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Written by</span>
+        
+        <br>
+        <span>on&nbsp;</span><time datetime="2020-10-05 20:26:48 &#43;0900 JST">October 5, 2020</time>
+</div>
+
+		<h1 class="post-title">tig/ghを使って効率的にPullRequestを送ろう</h1>
+<div class="post-line"></div>
+
+		
+
+		<p><img src="images/thumbnail.png" alt="thumbnail"></p>
+<h2 id="やりたいこと">やりたいこと</h2>
+<p>github.comにアクセスしないでローカルからPullRequestを作成できるようにします。</p>
+<h2 id="tldr">tl;dr</h2>
+<p><code>~/.gitconfig</code>に追記</p>
+<pre><code>[push]
+default = current
+</code></pre><p><code>~/.tigrc</code>に追記</p>
+<pre><code>bind status R &gt;gh pr create
+bind status V &gt;gh pr view
+</code></pre><p>tig status viewで<code>shift + r</code>でPullRequest作成</p>
+<h2 id="tig">tig</h2>
+<p>tigの詳しい説明は次の記事を参考にしてください。</p>
+<p><a href="https://qiita.com/suino/items/b0dae7e00bd7165f79ea">tigでgitをもっと便利に！ addやcommitも</a></p>
+<p>簡単に説明するとgitをよりビジュアル面や操作面で強化したツールになります。</p>
+<p><img src="images/tig-main-view.png" alt="tig-main-view"></p>
+<h2 id="gh">gh</h2>
+<p><a href="https://github.com/cli/cli">公式ページ</a></p>
+<p>ghはgithubがossで公開しているcliツールです。ターミナルからgithubにPullRequestを送ったりすることができます。</p>
+<p>詳しい説明は次の記事を参考にしていください。</p>
+<p><a href="https://dev.classmethod.jp/articles/shuntaka9576-gh/">GitHubを操作するCLI「gh – The GitHub CLI tool」(Beta)を試す</a></p>
+<p><img src="images/gh.png" alt="gh"></p>
+<h2 id="pullrequestを送れるようにする">PullRequestを送れるようにする。</h2>
+<p>実際にPullRequestを送れるように設定していきます。</p>
+<p>まず<code>~/.gitconfig</code>を修正します。次を追記します。</p>
+<pre><code>[push]
+default = current
+</code></pre><p>これを追記すると<code>git push origin {作業ブランチ名}</code>と入力してgithubにpushしていたところを
+<code>git push</code>のみで現在の作業ブランチをpushすることができます。</p>
+<p>具体的にいうと次のようになります。</p>
+<pre><code>git checkout -b feature
+git add .
+git commit
+git push //featureブランチが指定される
+</code></pre><p>次にtigを設定します。<code>~/.tigrc</code>に次のものを追記します。</p>
+<pre><code>bind status R &gt;gh pr create
+bind status V &gt;gh pr view
+</code></pre><p>この意味としてはstatus view(main viewで<code>shit+s</code>して遷移する画面)では<code>shift + r</code>を
+入力すると<code>gh pr create</code>しますよ。という設定です。</p>
+<h2 id="動作">動作</h2>
+<p><img src="https://i.gyazo.com/eadb44339b442b46062e01cc8af483c3.gif" alt="gif"></p>
+<h2 id="まとめ">まとめ</h2>
+<p>ブラウザまで行かずにpr作れるので効率的で良い感じです。</p>
+
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/posts/local-gcs-emulation/" class="left arrow">&#8592;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        		<footer>
+            <div style="margin-bottom: 5px">
+				<a href="https://github.com/sueken5" title="GitHub">
+					<span class="fa-stack fa-lg">
+						<i class="fas fa-circle fa-stack-2x"></i>
+						<i class="fab fa-github fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+				<a href="https://twitter.com/Sueken51" target="_blank">
+					<span class="fa-stack fa-lg">
+						<i class="fas fa-circle fa-stack-2x"></i>
+						<i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			</div>
+			
+			<span>
+			&copy; <time datetime="2020-10-05 21:12:02.086702 &#43;0900 JST m=&#43;0.046858803">2020</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
+
+    </body>
+</html>
